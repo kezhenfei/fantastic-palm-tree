@@ -10,14 +10,6 @@ library(ggplot2)
 library(plotly)
 ```
 
-```{r}
-p <- ggplot(adae) +
-  aes(x = AESER, fill = SEX, weight = AGE) +
-  geom_bar() +
-  scale_fill_hue(direction = 1) +
-  theme_minimal()
-ggplotly(p)
-```
 
 ```{r}
 library(readr)
@@ -25,4 +17,15 @@ adae <- read_csv("https://rhoinc.github.io/data-library/data/clinical-trials/ada
 
 adae
 ```
+
+
+```{r}
+p <- ggplot(adae) +
+  aes(x = AESER, y = AGE, fill = RACE) +
+  geom_boxplot(shape = "circle") +
+  scale_fill_hue(direction = 1) +
+  theme_minimal()
+ggplotly(p)
+```
+
 
